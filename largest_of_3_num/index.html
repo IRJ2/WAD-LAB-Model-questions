@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest of 3 numbers</title>
+</head>
+<body>
+    <h1>Largest of 3 numbers</h1>
+    <form name="myform">
+        <input type="number" placeholder="Enter first number" required><br>
+        <input type="number" placeholder="Enter first number" required><br>
+        <input type="number" placeholder="Enter first number" required><br>
+        <input type="button" onclick="find_largest()" value="Get result">
+    </form>
+    <p id="result"></p>
+    <script>
+        function find_largest(){
+            var elements=document.forms["myform"].elements;
+            document.getElementById("result").innerHTML="Largest number is "+
+            Math.max(elements[0].value,elements[1].value,elements[2].value)
+        }
+    </script>
+</body>
+</html>
