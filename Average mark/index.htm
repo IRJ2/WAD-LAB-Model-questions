@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Average mark</title>
+</head>
+<body>
+    <section>
+        <h1>Average mark calculator</h1>
+        <p id="alert"></p>
+        <form name="myform" >
+            <input type="number"  placeholder="Enter mark1" onblur="validate(this)" autofocus><br>
+            <input type="number"  placeholder="Enter mark2" onblur="validate(this)"><br>
+            <input type="number"  placeholder="Enter mark3" onblur="validate(this)"><br>
+            <input type="button" onclick="find_avg()" value="Get Average">
+        </form>
+        <h3 id="result"></h3>
+    </section>
+    <script>
+        function validate(data){
+            if(data.value=="") alert("Mark must be filled out!") 
+        }
+        function find_avg(){
+            var elements=document.forms["myform"].elements;
+            var sum=0;
+            for(var i=0;i<3;i++){
+                sum+=parseInt(elements[i].value);
+            }
+            document.getElementById("result").innerHTML="Average mark = "+sum/3;
+        }
+    </script>
+</body>
+</html>
